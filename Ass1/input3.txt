@@ -1,0 +1,19 @@
+# Test for the booking cannot made within 1 hr with the same campervan
+Location CBD Wicked Automatic         
+Location CBD Zeppelin Automatic       
+Location CBD Floyd Automatic          
+Location Penrith Queen Manual         
+Location Cremorne Ramones Automatic   
+Location Cremorne Nirvana Automatic  
+Location Sutherland Purple Manual     
+Location Sutherland Hendrix Manual    
+Location Sutherland Eagle Manual
+Request 1 2 Mar 1 9 Mar 23 4 Manual 4 Automatic
+Request 2 10 Mar 23 9 Oct 23 4 Manual 4 Automatic
+Request 3 1 Feb 22 1 Mar 1 4 Manual 4 Automatic
+Request 4 1 Feb 20 1 Feb 22 4 Manual 4 Automatic
+Request 5 9 Oct 23 1 Oct 30 4 Manual 4 Automatic
+Print CBD
+Print Penrith
+Print Cremorne 
+Print Sutherland

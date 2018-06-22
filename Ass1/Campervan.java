@@ -1,8 +1,10 @@
 
+
 public class Campervan {
 	private int id;
 	private String name;
 	private String transmission;
+	
 	
 	public Campervan() {}
 	public Campervan(int id, String name, String transmission) {
@@ -10,11 +12,11 @@ public class Campervan {
 		this.name = name;
 		this.transmission = transmission;
 	}
+	
 
 	public int getId() {
 		return id;
 	}
-
 
 
 	public void setId(int id) {

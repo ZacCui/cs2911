@@ -1,0 +1,38 @@
+public boolean CheckMap(){
+		// check job's link 
+		for(int i = 0; i < this.jobs.size(); i++){
+			if(!this.connected(this.jobs.get(i).getStart(),this.jobs.get(i).getEnd())) {
+				return false;
+			}
+		}
+		ArrayList<Node> visited = new ArrayList<Node>();
+		Queue<Node> q = new LinkedList<Node>();
+		q.add(this.node.get(0));
+		while(!q.isEmpty()){
+			Node curr = q.remove();
+			for(int j = 0; j < this.node.size();j++){
+				if(!this.connected(curr.getName(), this.getNodeName(j))) continue;
+				if(!visited.contains(this.getNode(j))){
+					visited.add(this.getNode(j));
+					q.add(this.getNode(j));
+				}
+			}
+		}
+		
+		if(!visited.containsAll(this.node)){
+			ArrayList<Node> temp = new ArrayList<Node>();
+			for(int j = 0; j < visited.size(); j++){
+				if(!this.node.contains(visited.get(j))){
+					temp.add(visited.get(j));
+				}
+			}
+			for(int i = 0; i < temp.size(); i++){
+				if(isEnd(this.jobs,temp.get(i).getName()) 
+						|| isStart(this.jobs,temp.get(i).getName())){
+					return false;
+				}
+			}
+		}
+		
+		return true;
+	}

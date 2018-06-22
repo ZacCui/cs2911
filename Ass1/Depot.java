@@ -24,6 +24,20 @@ public class Depot {
 		this.campervan = campervan;
 	}
 	
+	public int getNumOfA(){
+		int i=0,num = 0;
+		for(;this.campervan.size() > i; i++){
+			if(this.campervan.get(i).getTransmission().contains("Automatic")){
+				num++;
+			}
+		}
+		return num;
+	}
+	
+	public int getNumOfM(){
+		return (this.campervan.size()-this.getNumOfA());
+	}
+	
 	public int getSize(){
 		return campervan.size();
 	}
@@ -35,17 +49,25 @@ public class Depot {
 	public String getLocation() {
 		return location;
 	}
+	
 	public void setLocation(String location) {
 		this.location = location;
 	}
+	
 	public ArrayList<Campervan> getCampervan() {
 		return campervan;
 	}
+	
 	public void setCampervan(ArrayList<Campervan> campervan) {
 		this.campervan = campervan;
 	}
-	public boolean isAvailable(){
-		return true;
+	
+	public boolean isManual(int campID){
+		return (this.campervan.get(campID).getTransmission().contains("Manual"));
 	}
 	
+	public String getCampName(int index){
+		return this.campervan.get(index).getName();
+	}
+
 }
